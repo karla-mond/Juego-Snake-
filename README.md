@@ -1,2 +1,4 @@
 # Juego-Snake-
-Equipo 5 - Juego Snake Python
+Equipo 5 - Juegos Python
+
+Juego serpiente, packman, tiro parabólico
