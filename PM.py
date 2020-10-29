@@ -27,7 +27,7 @@ def tap(x, y):
 
 def inside(xy):
     "Return True if xy within screen."
-    return -200 < xy.x < 200
+    return -200 < xy.x < 200 
 
 def draw():
     "Draw ball and targets."
