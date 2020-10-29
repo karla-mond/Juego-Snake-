@@ -22,8 +22,8 @@ def tap(x, y):
     if not inside(ball):
         ball.x = -199
         ball.y = -199
-        speed.x = (x + 200) / 25
-        speed.y = (y + 200) / 25
+        speed.x = (x + 400) / 25 #determine x speed red
+        speed.y = (y + 400) / 25 #determine y speed red
 
 def inside(xy):
     "Return True if xy within screen."
@@ -46,15 +46,15 @@ def draw():
 def move():
     "Move ball and targets."
     if randrange(40) == 0:
-        y = randrange(-150, 150)
-        target = vector(200, y)
+        y = randrange(-150,150 ) 
+        target = vector(200, y) 
         targets.append(target)
-
+    #deterine velocity of blue
     for target in targets:
-        target.x -= 0.5
+        target.x -= 1.0 
 
     if inside(ball):
-        speed.y -= 0.35
+        speed.y -= 0.70
         ball.move(speed)
 
     dupe = targets.copy()
@@ -63,7 +63,7 @@ def move():
     for target in dupe:
         if abs(target - ball) > 13:
             targets.append(target)
-
+    
     draw()
 
     for target in targets:
@@ -79,19 +79,3 @@ tracer(False)
 onscreenclick(tap)
 move()
 done()
- Logo
-
-Free Python Games
- 
-
-Donate
-If you or your organization uses Free Games, consider donating:
-
-Donate to Free Python Games
-
-Related Topics
-Documentation overview
-Previous: Simon Says
-Next: Bounce
-Quick search
-
