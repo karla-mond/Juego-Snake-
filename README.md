@@ -1,19 +1,19 @@
 # Juego-Snake-
 Team 5 - Python Games
 
-Elected games:
+## Elected games:
 - Snake, 
 - Proyectile motion, 
 - Pacman
 
-Changes:
-Snake
+## Changes:
+#### Snake
   - random colors
   - food movement
-Proyectile motion
+#### Proyectile motion
   - sped up proyectile speed
   - removed horizontal limits
-Pacman
+#### Pacman
   - sped up ghosts
   - color change
   - made ghosts smarter
