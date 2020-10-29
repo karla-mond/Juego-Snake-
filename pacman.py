@@ -84,8 +84,8 @@ def valid(point):
 
 def world():
     "Draw world using path."
-    bgcolor('black')
-    path.color('blue')
+    bgcolor('purple')
+    path.color('white')
 
     for index in range(len(tiles)):
         tile = tiles[index]
@@ -98,7 +98,7 @@ def world():
             if tile == 1:
                 path.up()
                 path.goto(x + 10, y + 10)
-                path.dot(2, 'white')
+                path.dot(2, 'blue')
 
 def move():
     "Move pacman and all ghosts."
@@ -120,7 +120,7 @@ def move():
         square(x, y)
 
     up()
-    goto(pacman.x + 10, pacman.y + 10)
+    goto(pacman.x + 15, pacman.y + 15)
     dot(20, 'yellow')
 
     for point, course in ghosts:
@@ -138,8 +138,8 @@ def move():
             course.y = plan.y
 
         up()
-        goto(point.x + 10, point.y + 10)
-        dot(20, 'red')
+        goto(point.x + 20, point.y + 20)
+        dot(15, 'red')
 
     update()
 
@@ -169,7 +169,7 @@ onkey(lambda: change(0, -5), 'Down')
 world()
 move()
 done()
- Logo
+'''Logo
 
 Free Python Games
  
@@ -183,4 +183,4 @@ Related Topics
 Documentation overview
 Previous: Memory
 Next: Fidget
-Quick search
+Quick search'''
