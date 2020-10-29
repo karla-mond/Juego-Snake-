@@ -1,4 +1,4 @@
 # Juego-Snake-
-Equipo 5 - Juegos Python
+Team 5 - Python Games
 
-Juego serpiente, packman, tiro parabólico
+Snake, Proyectile motion, Pacman
