@@ -2,12 +2,12 @@
 from turtle import *
 import random
 from freegames import square, vector
-
+import time
 # vectors that dictate the positions of the food, the snake, and where the snake goes
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
-
+flag = False
 # dictionary that contains 5 different colors
 color = {1 : 'black', 2 : 'blue', 3 : 'green', 4 : 'orange', 5 : 'yellow'}	
 
@@ -33,15 +33,34 @@ def change(x, y):
 def inside(head):
     return -200 < head.x < 190 and -200 < head.y < 190
 
+#checks if the snake is inside the food square
+def insidef(head):
+    return food.x-8 < head.x < food.x+8 and food.y-8 < head.y < food.y+8
+
+#determines if the food is inside the boundaries
+def foodib(food):
+    return -200 < food.x < 190 and -200 < food.y < 190
+
+#moves food randomly given its position
+def mf():
+    x = random.randrange(-5,5,1)
+    y = random.randrange(-5,5,1)
+    food.x = food.x + x
+    food.y = food.y + y
 # the function that actually moves the snake
 def move():
 	# moves the snake itself
     head = snake[-1].copy()
     head.move(aim)
 
+    #moves food in case it touches the boundaries
+    if not foodib(food):
+        food.x = random.randrange(-15, 15) * 10
+        food.y = random.randrange(-15, 15) * 10
+
 	# checks the position of the head within the boundaries or inside 
 	# the snake's body to see if it's dead
-	# ends the game if ot's dead
+	# ends the game if it's dead
     if not inside(head) or head in snake:
         square(head.x, head.y, 9, 'red')
         update()
@@ -52,10 +71,11 @@ def move():
 	# checks the position of the head to see if it has eaten food, which then
 	# changes the food's position and elongates the snake
 	# if not, it eliminates the tail item to keep the snake the same size
-    if head == food:
+    if insidef(head):
         print('Snake:', len(snake))
         food.x = random.randrange(-15, 15) * 10
         food.y = random.randrange(-15, 15) * 10
+        
     else:
         snake.pop(0)
 
@@ -66,6 +86,7 @@ def move():
         square(body.x, body.y, 9, snakeC)
 	
 	# visualizes the food with the color foodC
+    mf()
     square(food.x, food.y, 9, foodC)
     update()
     ontimer(move, 100)
