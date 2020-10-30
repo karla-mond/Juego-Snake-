@@ -1,8 +1,8 @@
 # Juego-Snake-
 Team 5 - Python Games
-Emiliano Cabrera - A01025453
-Karla Mondragón - A01025108
-Andrew Dunkerley - A01025076
+<br/>Emiliano Cabrera - A01025453
+<br/>Karla Mondragón - A01025108
+<br/>Andrew Dunkerley - A01025076
 
 ## Elected games:
 - Snake, 
