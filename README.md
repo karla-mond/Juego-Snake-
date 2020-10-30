@@ -1,4 +1,19 @@
 # Juego-Snake-
-Equipo 5 - Juegos Python
+Team 5 - Python Games
 
-Juego serpiente, packman, tiro parabólico
+## Elected games:
+- Snake, 
+- Proyectile motion, 
+- Pacman
+
+## Changes:
+#### Snake
+  - random colors
+  - food movement
+#### Proyectile motion
+  - sped up proyectile speed
+  - removed horizontal limits
+#### Pacman
+  - sped up ghosts
+  - color change
+  - made ghosts smarter
