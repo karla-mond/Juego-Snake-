@@ -1,4 +1,4 @@
-# Juego-Snake-
+# Python Games Project
 Team 5 - Python Games
 <br/>Emiliano Cabrera - A01025453
 <br/>Karla Mondragón - A01025108
