@@ -24,7 +24,7 @@ def tap(x, y):
 
 # checks whether xy is within the boundaries
 def inside(xy):
-    return -200 < xy.x < 200 
+    return -200 < xy.y < 200 
 
 # draws the proyectile and the targets
 def draw():
