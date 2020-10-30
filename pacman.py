@@ -1,30 +1,29 @@
-"""Pacman, classic arcade game.
-
-Exercises
-
-1. Change the board.
-2. Change the number of ghosts.
-3. Change where pacman starts.
-4. Make the ghosts faster/slower.
-5. Make the ghosts smarter.
-
-"""
-
+# imports
 from random import choice
 from turtle import *
 from freegames import floor, vector
 
+# dictionary that records the score
 state = {'score': 0}
+
 path = Turtle(visible=False)
 writer = Turtle(visible=False)
+
+# direction pacman takes
 aim = vector(5, 0)
+
+# pacman himself
 pacman = vector(-40, -80)
+
+# vectors representing the ghost's positions
 ghosts = [
     [vector(-180, 160), vector(5, 0)],
     [vector(-180, -160), vector(0, 5)],
     [vector(100, 160), vector(0, -5)],
     [vector(100, -160), vector(-5, 0)],
 ]
+
+# the map
 tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
@@ -48,8 +47,8 @@ tiles = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 ]
 
+# creates a square using path at x, y
 def square(x, y):
-    "Draw square using path at (x, y)."
     path.up()
     path.goto(x, y)
     path.down()
@@ -61,15 +60,15 @@ def square(x, y):
 
     path.end_fill()
 
+# returns the offset of point in tiles
 def offset(point):
-    "Return offset of point in tiles."
     x = (floor(point.x, 20) + 200) / 20
     y = (180 - floor(point.y, 20)) / 20
     index = int(x + y * 20)
     return index
 
+# returns a boolean on whether point is valid in tiles
 def valid(point):
-    "Return True if point is valid in tiles."
     index = offset(point)
 
     if tiles[index] == 0:
@@ -82,8 +81,8 @@ def valid(point):
 
     return point.x % 20 == 0 or point.y % 20 == 0
 
+# draws the map
 def world():
-    "Draw world using path."
     bgcolor('purple')
     path.color('white')
 
@@ -100,8 +99,8 @@ def world():
                 path.goto(x + 10, y + 10)
                 path.dot(2, 'blue')
 
+# moves pacman and  the ghosts
 def move():
-    "Move pacman and all ghosts."
     writer.undo()
     writer.write(state['score'])
 
@@ -149,12 +148,13 @@ def move():
 
     ontimer(move, 100)
 
+# modifies the direction pacman moves in
 def change(x, y):
-    "Change pacman aim if valid."
     if valid(pacman + vector(x, y)):
         aim.x = x
         aim.y = y
 
+# set up the game
 setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
@@ -162,25 +162,14 @@ writer.goto(160, 160)
 writer.color('white')
 writer.write(state['score'])
 listen()
+
+# checks fro key presses
 onkey(lambda: change(5, 0), 'Right')
 onkey(lambda: change(-5, 0), 'Left')
 onkey(lambda: change(0, 5), 'Up')
 onkey(lambda: change(0, -5), 'Down')
+
+# draws the map and runs the game
 world()
 move()
 done()
-'''Logo
-
-Free Python Games
- 
-
-Donate
-If you or your organization uses Free Games, consider donating:
-
-Donate to Free Python Games
-
-Related Topics
-Documentation overview
-Previous: Memory
-Next: Fidget
-Quick search'''
