@@ -1,9 +1,10 @@
 """
-Code for parabolic motion game
-
-Andrew Dunkerley Vera A01025076
-Karla Valeria Mondragón Rosas A01025108
-Emiliano Cabrera Ruiz A01025453
+Team 5 
+Emiliano Cabrera, A01025453 
+Andrew Dunkerley, A01025076 
+Karla Mondragón, A01025108 
+October 30th 2020 
+This is a code for the Parabolic Motion game.
 """
 
 # imports
