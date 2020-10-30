@@ -1,3 +1,11 @@
+'''
+Team 5
+Emiliano Cabrera, A01025453
+Andrew Dunkerley, A01025076 
+Karla Mondragón, A01025108
+October 30th 2020 
+This is a code for the game of Pacman. 
+'''
 # imports
 from random import choice
 from turtle import *
