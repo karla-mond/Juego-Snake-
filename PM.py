@@ -1,3 +1,11 @@
+"""
+Code for parabolic motion game
+
+Andrew Dunkerley Vera A01025076
+Karla Valeria Mondragón Rosas A01025108
+Emiliano Cabrera Ruiz A01025453
+"""
+
 # imports
 from random import randrange
 from turtle import *
