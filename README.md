@@ -20,3 +20,10 @@ Team 5 - Python Games
   - sped up ghosts
   - color change
   - made ghosts smarter
+
+#### Requirements
+  - install the freegames library for python3
+
+#### To run
+  - go to the directory where the scripts are located
+  - run them via the terminal with >>> python3 <filename.py>
