@@ -1,3 +1,11 @@
+'''
+Script for the classic Nokia phone game: Snake
+Made by:
+Emiliano Cabrera - A01025453
+Karla Mondragón - A01025108
+Andrew Dunkerley - A01025076
+'''
+
 # imports
 from turtle import *
 import random
